@@ -34,7 +34,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, mbstring, zip, pcntl, bcmath
+          extensions: dom, mbstring, zip, pcntl, bcmath, fileinfo
           coverage: none
 
       - name: Setup problem matchers
