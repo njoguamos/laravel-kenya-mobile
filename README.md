@@ -88,7 +88,7 @@ composer test
 
 ## 5. Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [RELEASES](https://github.com/njoguamos/laravel-kenya-mobile/releases) for more information what has changed recently.
 
 ## 6. Contributing
 
@@ -96,7 +96,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## 7. Security Vulnerabilities
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+If you discover any security related issues, please email njoguamos@gmail.com instead of using the issue tracker.
 
 ## 8. Credits
 
