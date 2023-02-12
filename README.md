@@ -13,6 +13,11 @@ A rule for validating Kenyan mobile number.
 1. Save time from implementing your own validation rule.
 2. Tested with phone number approved by [Communications Authority of Kenya](https://www.ca.go.ke/wp-content/uploads/2023/01/Telecommunication-Numbering-Plan-for-Kenya-January-2023.pdf) supported.
 
+>**Info**
+> This package assumed that the phone number is either a 9 digit e.g `700325008` or 10 digit `0700325008`.
+> Number with leading `zero (0)` should be casted into an `(int)` before storing in a database.
+> It also assumed that you will store the prefix `+254` in different column or table.
+
 ## 2. Installation
 
 You can install the package via composer:
