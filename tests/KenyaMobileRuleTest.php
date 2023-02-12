@@ -56,4 +56,5 @@ test(description: 'it fails with invalid numbers', closure: function (int $numbe
     ['Numbers with prefix' => '+254700325008'],
     ['Foreign numbers' => '+18143519590', 18143519590],
     ['Long numbers' => 70032500898424],
+    ['Tool free' => 800_000_432],
 ]);
