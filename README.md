@@ -11,7 +11,7 @@ A rule for validating Kenyan mobile number.
 
 ## 1. Why use this package
 1. Save time from implementing your own validation rule.
-2. Multiple phone number supported.
+2. Tested with phone number approved by [Communications Authority of Kenya](https://www.ca.go.ke/wp-content/uploads/2023/01/Telecommunication-Numbering-Plan-for-Kenya-January-2023.pdf) supported.
 
 ## 2. Installation
 
