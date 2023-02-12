@@ -30,7 +30,6 @@ composer require njoguamos/laravel-kenya-mobile
 
 namespace App\Http\Requests;
 
-use App\Rules\PhoneNumberRule;
 use NjoguAmos\KeMobile\KenyaMobileRule;
 use Illuminate\Foundation\Http\FormRequest;
 
