@@ -3,7 +3,7 @@
 use NjoguAmos\KeMobile\KenyaMobileRule;
 
 beforeEach(closure: function () {
-    $this->rule = new KenyaMobileRule();
+    $this->rule = new KenyaMobileRule;
 });
 
 test(description: 'it passes for a name with nine digits', closure: function () {

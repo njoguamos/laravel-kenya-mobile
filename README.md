@@ -20,6 +20,11 @@ A rule for validating Kenyan mobile number.
 
 ## 2. Installation
 
+| Version | Supported Laravel |
+|---------|-------------------|
+| 1.Xx    | 9.x, 10.x         |
+| 2.x     | 11.x              |
+
 You can install the package via composer:
 
 ```bash
