@@ -7,16 +7,11 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/njoguamos/laravel-kenya-mobile/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/njoguamos/laravel-kenya-mobile/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/njoguamos/laravel-kenya-mobile.svg?style=flat-square)](https://packagist.org/packages/njoguamos/laravel-kenya-mobile)
 
-A rule for validating Kenyan mobile number.
+A rule for validating Kenyan mobile number. You can either validate phone number with 9 or 10 digits such as `700325008` or `0700325008` or validate full phone number such as `254700325008`.
 
 ## 1. Why use this package
 1. Save time from implementing your own validation rule.
 2. Tested with phone number approved by [Communications Authority of Kenya](https://www.ca.go.ke/wp-content/uploads/2023/01/Telecommunication-Numbering-Plan-for-Kenya-January-2023.pdf) supported.
-
->**Info**
-> This package assumed that the phone number is either a 9 digit e.g `700325008` or 10 digit `0700325008`.
-> Number with leading `zero (0)` should be casted into an `(int)` before storing in a database.
-> It also assumed that you will store the prefix `+254` in different column or table.
 
 ## 2. Installation
 
@@ -40,6 +35,7 @@ composer require njoguamos/laravel-kenya-mobile
 
 namespace App\Http\Requests;
 
+use NjoguAmos\KeMobile\KenyaMobileFullRule;
 use NjoguAmos\KeMobile\KenyaMobileRule;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -50,7 +46,10 @@ class RegisterUserRequest extends FormRequest
     {
         return [
             // ... other rules
+            // Validate phone number with 9 or 10 digits
             'phone'    => ['nullable', new KenyaMobileRule(),'unique:users,phone'],
+            // Or validate full phone number
+            'full_phone'    => ['nullable', new KenyaMobileFullRule(),'unique:users,full_phone'],
         ];
     }
 }

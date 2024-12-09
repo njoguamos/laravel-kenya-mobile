@@ -1,21 +1,21 @@
 <?php
 
-use NjoguAmos\KeMobile\KenyaMobileRule;
+use NjoguAmos\KeMobile\KenyaMobileFullRule;
 
 beforeEach(closure: function () {
-    $this->rule = new KenyaMobileRule;
+    $this->rule = new KenyaMobileFullRule;
 });
 
-test(description: 'it passes for a phone with nine digits', closure: function () {
-    expect(value: $this->rule)->toPassWith(value: 700_325_008);
+test(description: 'it fails for a phone with nine digits', closure: function () {
+    expect(value: $this->rule)->not()->toPassWith(value: 700_325_008);
 });
 
-test(description: 'it passes for a phone with ten digits', closure: function () {
-    expect(value: $this->rule)->toPassWith('0700325008');
+test(description: 'it fails for a phone with ten digits', closure: function () {
+    expect(value: $this->rule)->not()->toPassWith('0700325008');
 });
 
 test(description: 'it passes for approved Communication Authority of Kenya telephony code series', closure: function (int $prefix) {
-    $number = $prefix.random_int(min: 100_000, max: 999_999);
+    $number = '254'.$prefix.random_int(min: 100_000, max: 999_999);
 
     expect(value: $this->rule)->toPassWith($number);
 })->with([
@@ -50,7 +50,7 @@ test(description: 'it fails with invalid numbers', closure: function (int|string
     expect(value: $this->rule)->not()->toPassWith($number);
 })->with([
     'Short numbers' => [1, 12, 123, 1234, 12345, 123456, 1234567, 1234567],
-    'Numbers with prefix' => ['+254700325008'],
+    'Numbers with plus' => ['+254700325008'],
     'Foreign numbers' => ['+18143519590', 18143519590],
     'Long numbers' => [70032500898424],
     'Tool free' => [800_000_432],
