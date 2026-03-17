@@ -14,6 +14,14 @@ test(description: 'it fails for a phone with ten digits', closure: function () {
     expect(value: $this->rule)->not()->toPassWith('0700325008');
 });
 
+test(description: 'it passes for a phone with 254 and nine digits', closure: function () {
+    expect(value: $this->rule)->toPassWith('254700325008');
+});
+
+test(description: 'it passes for a phone with +254 and nine digits', closure: function () {
+    expect(value: $this->rule)->toPassWith('+254700325008');
+});
+
 test(description: 'it passes for approved Communication Authority of Kenya telephony code series', closure: function (int $prefix) {
     $number = '254'.$prefix.random_int(min: 100_000, max: 999_999);
 
@@ -50,8 +58,8 @@ test(description: 'it fails with invalid numbers', closure: function (int|string
     expect(value: $this->rule)->not()->toPassWith($number);
 })->with([
     'Short numbers' => [1, 12, 123, 1234, 12345, 123456, 1234567, 1234567],
-    'Numbers with plus' => ['+254700325008'],
+    'Numbers without 254 prefix' => ['700325008', '0700325008'],
     'Foreign numbers' => ['+18143519590', 18143519590],
-    'Long numbers' => [70032500898424],
+    'Long numbers' => [25470032500898424, '+25470032500898424'],
     'Tool free' => [800_000_432],
 ]);
