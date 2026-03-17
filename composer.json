@@ -19,17 +19,17 @@
         }
     ],
     "require": {
-        "php": "^8.2",
+        "php": "^8.3 || ^8.4 || ^8.5",
         "spatie/laravel-package-tools": "^1.16.0",
-        "illuminate/contracts": "^11.0 | ^12.0"
+        "illuminate/contracts": "^11.0 || ^12.0 || ^13.0"
     },
     "require-dev": {
         "laravel/pint": "^1",
-        "nunomaduro/collision": "^8.5.0",
-        "larastan/larastan": "^3.0.0",
-        "orchestra/testbench": "^9.0",
-        "pestphp/pest": "^v3.5.1",
-        "pestphp/pest-plugin-laravel": "^3.0.0",
+        "nunomaduro/collision": "^8.5",
+        "larastan/larastan": "^v3.0",
+        "orchestra/testbench": "^10.0 || ^11.0",
+        "pestphp/pest": "^v4.0",
+        "pestphp/pest-plugin-laravel": "^v4.0",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0"
@@ -70,5 +70,20 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "archive": {
+        "exclude": [
+            "/.editorconfig",
+            "/.gitattributes",
+            "/.github",
+            "/.gitignore",
+            "/.idea",
+            "/art.png",
+            "/CONTRIBUTING.md",
+            "/phpstan-baseline.neon",
+            "/phpstan.neon.dist",
+            "/phpunit.xml.dist",
+            "/tests"
+        ]
+    }
 }
