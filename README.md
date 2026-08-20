@@ -60,7 +60,9 @@ class RegisterUserRequest extends FormRequest
 | Carrier                   | Prefix                                           |
 |---------------------------|--------------------------------------------------|
 | Airtel Networks Kenya Ltd | 100, 101, 102, 103, 104, 105, 106                |
-| Safaricom PLC             | 110, 111, 112, 113, 114, 115                     |
+| Safaricom PLC             | 110, 111, 112, 113, 114, 115, 118, 119           |
+| Safaricom PLC             | 140, 141, 142, 143                               |
+| Safaricom PLC             | 180, 181, 182                                    |
 | Jambo Telcoms Ltd         | 120                                              |
 | Infura Ltd                | 124                                              |
 | Hidiga Investments Ltd    | 126                                              |

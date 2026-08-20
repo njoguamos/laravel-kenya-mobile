@@ -20,7 +20,9 @@ test(description: 'it passes for approved Communication Authority of Kenya telep
     expect(value: $this->rule)->toPassWith($number);
 })->with([
     'Airtel Networks Kenya Ltd 10x' => [100, 101, 102, 103, 104, 105, 106],
-    'Safaricom PLC 11x' => [110, 111, 112, 113, 114, 115],
+    'Safaricom PLC 11x' => [110, 111, 112, 113, 114, 115, 118, 119],
+    'Safaricom PLC 14x' => [140, 141, 142, 143],
+    'Safaricom PLC 18x' => [180, 181, 182],
     'Jambo Telcoms Ltd 12x' => [120],
     'Infura Ltd 12x' => [124],
     'Hidiga Investments Ltd 12x' => [126],
